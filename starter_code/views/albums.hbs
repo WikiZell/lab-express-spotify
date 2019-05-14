@@ -1,0 +1,22 @@
+<h1>Albums List:</h1>
+
+{{#grouped_each 3 albums}}
+<div class="card-deck">
+    {{#each this }}
+    <div class="card">
+        <img src="{{this.images.0.url}}" onError="this.onerror=null;this.src='https://placeimg.com/350/350/people/grayscale'" " class="card-img-top" alt="{{this.name}}">
+        <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text"></p>
+            <form action="/tracks" method="GET">
+                <input type="hidden" name="id" value="{{this.id}}">
+                <button type="submit" class="btn btn-primary home-search">Go to tracks list...</button>
+            </form>
+            
+            </p>
+        </div>
+    </div>
+    {{/each}}
+</div>
+<hr>
+{{/grouped_each}}

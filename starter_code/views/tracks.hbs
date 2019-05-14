@@ -1,0 +1,16 @@
+
+    <ul class="list-group">
+        {{#each tracks}}
+  <li class="list-group-item">
+      {{this.name}}<span style="float-right">
+  <audio controls
+        src="{{this.preview_url}}">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio></span>
+    </li>
+    {{/each}}
+
+</ul>
+    
+
